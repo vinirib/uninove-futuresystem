@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body th:fragment="menuLateral" class="no-skin">
+		<div id="menuLateral">
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="/">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-table"></i>
+							<span class="menu-text">
+								Listar
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/usuarios/listar}">
+									<i class="fa fa-users"></i>
+									Usuários
+								</a>
+
+							</li>
+							<li class="">
+								<a th:href="@{/alunos/listar}">
+									<i class="fa fa-users"></i>
+									Alunos
+								</a>
+
+							</li>
+
+							<li class="">
+								<a th:href="@{/professores/listar}">
+									<i class="fa fa-book"></i>
+									Professores
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a th:href="@{/responsaveis/listar}">
+									<i class="fa fa-male"></i>
+									Responsáveis
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a th:href="@{/turmas/listar}">
+									<i class="fa fa-users"></i>
+									Turmas
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> Cadastrar </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/usuarios/cadastrar}">
+									<i class="fa fa-users"></i>
+									Usuário
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/alunos/cadastrar}">
+									<i class="fa fa-users"></i>
+									Aluno
+								</a>
+
+							</li>
+
+							<li class="">
+								<a th:href="@{/professores/cadastrar}">
+									<i class="fa fa-book"></i>
+									Professor
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a th:href="@{/responsaveis/cadastrar}">
+									<i class="fa fa-male"></i>
+									Responsável
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a th:href="@{/turmas/cadastrar}">
+									<i class="fa fa-users"></i>
+									Turma
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-users"></i>
+							<span class="menu-text"> Gerenciar Turmas </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/turmas/associarAluno}">
+									<i class="fa fa-user-plus"></i>
+									Associar Aluno à Turma
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-calendar"></i>
+							<span class="menu-text"> Agenda </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/agendas/porTurma}">
+									<i class="fa fa-user-plus"></i>
+									Visualizar por turma
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/agendas/agendaDosProfessores}">
+									<i class="fa fa-user-plus"></i>
+									Visualizar de todos professores
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/usuarios/cadastrar}">
+									<i class="fa fa-user-plus"></i>
+									Associar Professor à agenda
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-eye"></i>
+							<span class="menu-text"> Faltas </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/faltas/listar}">
+									<i class="fa fa-table"></i>
+									Lista de Faltas por aluno
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul><!--/.nav-list!-->
+			</div><!-- /.main-content -->
+	</body>
+</html>

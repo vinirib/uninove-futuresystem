@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body th:fragment="menuLateral" class="no-skin">
+		<div id="menuLateral">
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="/">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-table"></i>
+							<span class="menu-text">
+								Listar
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/alunos/listar}">
+									<i class="fa fa-users"></i>
+									Alunos
+								</a>
+
+							</li>
+							<li class="">
+								<a th:href="@{/professores/listar}">
+									<i class="fa fa-book"></i>
+									Professores
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a th:href="@{/responsaveis/listar}">
+									<i class="fa fa-male"></i>
+									Responsáveis
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a th:href="@{/turmas/listar}">
+									<i class="fa fa-users"></i>
+									Turmas
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-calendar"></i>
+							<span class="menu-text"> Agenda </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/agendas/porProfessor}">
+									<i class="fa fa-user-plus"></i>
+									Visualizar sua agenda
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/agendas/agendaDosProfessores}">
+									<i class="fa fa-user-plus"></i>
+									Visualizar de todos professores
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-eye"></i>
+							<span class="menu-text"> Faltas </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/faltas/inserirFaltaAluno}">
+									<i class="fa fa-table"></i>
+									Inserir falta para aluno
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/faltas/listar}">
+									<i class="fa fa-table"></i>
+									Lista de Faltas por aluno
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul><!--/.nav-list!-->
+			</div><!-- /.main-content -->
+	</body>
+</html>

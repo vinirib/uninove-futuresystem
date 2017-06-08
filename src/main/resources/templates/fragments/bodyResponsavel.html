@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body>
+		<div th:fragment="bodyAdministrador">
+			<div class="page-header">
+				<h2>Olá Responsável, <span th:text ="${#authentication.getPrincipal().getName()}"></span></h2>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row">
+						
+							<p align="left">Bem vindo ao sistema Controle de Escolares. Com esse sistema os pais poderão saber
+								quando seus filhos se ausentarem de alguma aula sendo notificados por email.</p>
+							
+																				
+							<p align="left">Caro Pai(Mae) de Aluno: Apos realizar seu login, vá ao menu <strong>Listar:</strong></p><blockquote>  Para verificar a lista de professores e Mat&eacute;rias;<br/>
+							 Em <strong>Agenda</strong> &eacute; possivel verificar a agenda de seus filhos e dos professores;<br/>
+							 Na  op&ccedil;ão <strong> Notificações</strong> notara as recentes Notificações enviadas para seu email particular;<br/>
+							 E para <strong>Verificar</strong> as faltas registradas de seus filhos vá em <strong>Faltas. </strong>
+							 							 
+							 </blockquote> 
+								
+							
+							
+							
+							
+						
+						
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

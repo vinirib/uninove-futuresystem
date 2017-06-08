@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_8bQgMEUwEeecW4HZdz6pIA" name="RootElement">
+  <packagedElement xmi:type="uml:Model" xmi:id="_9lh68EUwEeecW4HZdz6pIA" name="generated">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9lkXMEUwEeecW4HZdz6pIA" name="br">
+      <packagedElement xmi:type="uml:Package" xmi:id="_9lkXMUUwEeecW4HZdz6pIA" name="com">
+        <packagedElement xmi:type="uml:Package" xmi:id="_9lk-QEUwEeecW4HZdz6pIA" name="escolares">
+          <packagedElement xmi:type="uml:Package" xmi:id="_9lk-QUUwEeecW4HZdz6pIA" name="domain">
+            <packagedElement xmi:type="uml:Class" xmi:id="_9lllUEUwEeecW4HZdz6pIA" name="Agenda" visibility="public">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_9lllUUUwEeecW4HZdz6pIA">
+                <body>
+ * @author vinicius Ribeiro
+ *
+ * 26 de mai de 2017
+ *
+ </body>
+              </ownedComment>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_9lmMYkUwEeecW4HZdz6pIA" name="id" visibility="private" type="_9lmMYUUwEeecW4HZdz6pIA" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_9lnagEUwEeecW4HZdz6pIA" name="turma" visibility="private" type="_9lmzcEUwEeecW4HZdz6pIA" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_9loBkkUwEeecW4HZdz6pIA" name="data" visibility="private" type="_9loBkUUwEeecW4HZdz6pIA" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_9loooUUwEeecW4HZdz6pIA" name="horaInicio" visibility="private" type="_9loooEUwEeecW4HZdz6pIA" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_9lpPsEUwEeecW4HZdz6pIA" name="horaFim" visibility="private" type="_9loooEUwEeecW4HZdz6pIA" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_9lp2wEUwEeecW4HZdz6pIA" name="professor" visibility="private" type="_9lpPsUUwEeecW4HZdz6pIA" isUnique="false"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lp2wUUwEeecW4HZdz6pIA" name="getId" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lqd0EUwEeecW4HZdz6pIA" type="_9lmMYUUwEeecW4HZdz6pIA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lqd0UUwEeecW4HZdz6pIA" name="setId" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lrE4EUwEeecW4HZdz6pIA" name="id" type="_9lmMYUUwEeecW4HZdz6pIA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lrE4UUwEeecW4HZdz6pIA" name="getTurma" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lrE4kUwEeecW4HZdz6pIA" type="_9lmzcEUwEeecW4HZdz6pIA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lrr8EUwEeecW4HZdz6pIA" name="setTurma" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lrr8UUwEeecW4HZdz6pIA" name="turma" type="_9lmzcEUwEeecW4HZdz6pIA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lrr8kUwEeecW4HZdz6pIA" name="getData" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lsTAEUwEeecW4HZdz6pIA" type="_9loBkUUwEeecW4HZdz6pIA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lsTAUUwEeecW4HZdz6pIA" name="setData" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lsTAkUwEeecW4HZdz6pIA" name="data" type="_9loBkUUwEeecW4HZdz6pIA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9ls6EEUwEeecW4HZdz6pIA" name="getHoraInicio" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9ls6EUUwEeecW4HZdz6pIA" type="_9loooEUwEeecW4HZdz6pIA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lthIEUwEeecW4HZdz6pIA" name="setHoraInicio" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lthIUUwEeecW4HZdz6pIA" name="horaInicio" type="_9loooEUwEeecW4HZdz6pIA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9lthIkUwEeecW4HZdz6pIA" name="getHoraFim" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9luIMEUwEeecW4HZdz6pIA" type="_9loooEUwEeecW4HZdz6pIA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9luIMUUwEeecW4HZdz6pIA" name="setHoraFim" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9luIMkUwEeecW4HZdz6pIA" name="horaFim" type="_9loooEUwEeecW4HZdz6pIA"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9luvQEUwEeecW4HZdz6pIA" name="getProfessor" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9luvQUUwEeecW4HZdz6pIA" type="_9lpPsUUwEeecW4HZdz6pIA" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_9luvQkUwEeecW4HZdz6pIA" name="setProfessor" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lvWUEUwEeecW4HZdz6pIA" name="professor" type="_9lpPsUUwEeecW4HZdz6pIA"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9lmzcEUwEeecW4HZdz6pIA" name="Turma"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_9lpPsUUwEeecW4HZdz6pIA" name="Professor"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_9lllUkUwEeecW4HZdz6pIA" name="datatype">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9lmMYEUwEeecW4HZdz6pIA" name="datatype">
+      <packagedElement xmi:type="uml:Class" xmi:id="_9lmMYUUwEeecW4HZdz6pIA" name="Integer"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_9lnagUUwEeecW4HZdz6pIA" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9lnagkUwEeecW4HZdz6pIA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_9loBkEUwEeecW4HZdz6pIA" name="time">
+        <packagedElement xmi:type="uml:Class" xmi:id="_9loBkUUwEeecW4HZdz6pIA" name="LocalDate"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_9loooEUwEeecW4HZdz6pIA" name="LocalTime"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

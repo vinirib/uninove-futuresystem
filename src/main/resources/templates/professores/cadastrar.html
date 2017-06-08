@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/headTag :: headTag">
+	</head>
+	<body class="no-skin">
+		<!-- TEMPLATE HEADER NAVBAR -->
+		<div th:include="fragments/header-navbar" th:remove="tag"></div>
+		<div class="main-container ace-save-state" id="main-container">
+			<script th:inline="javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<script th:inline="javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-users"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!--/.sidebar-shortcuts !-->
+				
+				<!-- TEMPLATE MENU LATERAL -->
+				<div sec:authorize="hasRole('ROLE_ADMIN')">
+					<div th:include="fragments/menuLateralAdmin" th:remove="tag"></div>
+				</div>
+				<div sec:authorize="hasRole('ROLE_PROFESSOR')">
+					<div th:include="fragments/menuLateralProfessor" th:remove="tag"></div>
+				</div>
+				<div sec:authorize="hasRole('ROLE_RESPONSAVEL')">
+					<div th:include="fragments/menuLateralResponsavel" th:remove="tag"></div>
+				</div>
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+							<li class="active">Dashboard</li>
+						</ul><!--/.breadcrumb!-->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!--/.nav-search!-->
+					</div>
+
+					<div class="page-content">
+						<div class="ace-settings-container" id="ace-settings-container">
+							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+								<i class="ace-icon fa fa-cog bigger-130"></i>
+							</div>
+
+							<div class="ace-settings-box clearfix" id="ace-settings-box">
+								<div class="pull-left width-50">
+									<div class="ace-settings-item">
+										<div class="pull-left">
+											<select id="skin-colorpicker" class="hide">
+												<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+											</select>
+										</div>
+										<span>&nbsp; Choose Skin</span>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
+										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
+										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
+										<label class="lbl" for="ace-settings-add-container">
+											Inside
+											<b>.container</b>
+										</label>
+									</div>
+								</div><!--/.pull-left!-->
+
+								<div class="pull-left width-50">
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
+										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
+										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
+										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+									</div>
+								</div><!--/.pull-left-->
+							</div><!--/.ace-settings-box-->
+						</div><!--/.ace-settings-container!-->
+						
+						<div class="page-header">
+							<h1>
+								Professor
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									Cadastro de novo Professor
+								</small>
+							</h1>
+						</div>
+						<!-- 		page-header -->
+						<div class="row">
+							<div class="col-xs-12">
+							
+<!-- 							AQUI COMECA O FORM -->
+
+							<form th:action="@{/professores/gravar}" method="post" class="form-horizontal" role="form" th:object="${professor}">
+								<input type="hidden" th:field="*{id}"/>
+								<input type="hidden" th:field="*{endereco.id}"/>
+								<input type="hidden" th:field="*{usuario.id}"/>
+								<input type="hidden" id="password" th:name="usuario.password" th:value="*{usuario.password}"/>
+								<input type="hidden" th:name="usuario.dataCadastro" th:value="${#temporals.format(#temporals.createNow(),'dd/MM/yyyy HH:mm')}"/>
+								<input type="hidden" th:name="usuario.role.name" value="ROLE_PROFESSOR"/>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nome</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{nome}" class="col-xs-10 col-sm-5" th:value="*{nome}" placeholder="Nome"/>
+										<label class="error" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">Name error</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Telefone</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{telefone}" class="col-xs-10 col-sm-5" th:value="*{telefone}"/>
+										<label class="error" th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}">Name error</label>
+									</div>
+								</div>
+								<h3 class="header smaller lighter blue">Endereço</h3>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Rua/Av</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{endereco.rua}" class="col-xs-10 col-sm-5" th:value="*{endereco.rua}" placeholder=""/>
+										<label class="error" th:if="${#fields.hasErrors('endereco.rua')}" th:errors="*{endereco.rua}">Name error</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Número</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{endereco.numero}" class="col-xs-10 col-sm-5" th:value="*{endereco.numero}" placeholder=""/>
+										<label class="error" th:if="${#fields.hasErrors('endereco.numero')}" th:errors="*{endereco.numero}">Name error</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Bairro</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{endereco.bairro}" class="col-xs-10 col-sm-5" th:value="*{endereco.bairro}" placeholder=""/>
+										<label class="error" th:if="${#fields.hasErrors('endereco.bairro')}" th:errors="*{endereco.bairro}">Name error</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Estado</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{endereco.estado}" class="col-xs-10 col-sm-5" th:value="*{endereco.estado}" placeholder=""/>
+										<label class="error" th:if="${#fields.hasErrors('endereco.estado')}" th:errors="*{endereco.estado}">Name error</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Municipio</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{endereco.municipio}" class="col-xs-10 col-sm-5" th:value="*{endereco.municipio}" placeholder=""/>
+										<label class="error" th:if="${#fields.hasErrors('endereco.municipio')}" th:errors="*{endereco.municipio}">Name error</label>
+									</div>
+								</div>
+								<h3 class="header smaller lighter blue">Matéria</h3>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="control-group">
+											<label class="control-label bolder blue"></label>
+											<div class="radio" th:each="materia : ${materias}">
+													<label>
+														<input th:field="*{materia}" th:value="${materia}" class="ace" type="radio"/>
+														<span class="lbl"><span th:text="${materia}"></span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<label class="error" th:if="${#fields.hasErrors('materia')}" th:errors="*{materia}">Password error</label>
+									</div>
+									
+									<h3 class="header smaller lighter blue"> Usuário</h3>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nome</label>
+										<div class="col-sm-9">
+											<input type="text" th:field="*{usuario.name}" class="col-xs-10 col-sm-5" th:value="*{usuario.name}" placeholder="Nome"/>
+											<label class="error" th:if="${#fields.hasErrors('usuario.name')}" th:errors="*{usuario.name}">Name error</label>
+										</div>
+									</div>
+									<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Username</label>
+									<div class="col-sm-9">
+										<input type="text" th:field="*{usuario.username}" class="col-xs-10 col-sm-5" th:value="*{usuario.username}" placeholder="Username@email.com"/>
+										<label class="error" th:if="${#fields.hasErrors('usuario.username')}" th:errors="*{usuario.username}">Name error</label>
+									</div>
+								</div>
+<!-- 								<div th:if="${professor.usuario.password == null}"> -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Senha</label>
+										<div class="col-sm-9">
+											<input type="password" id="passwordForm" th:field="*{usuario.passwordForm}" class="col-xs-10 col-sm-5" th:value="*{usuario.passwordForm}" placeholder="senha"/>
+											<label class="error" th:if="${#fields.hasErrors('usuario.passwordForm')}" th:errors="*{usuario.passwordForm}">Name error</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Confirmar senha</label>
+										<div class="col-sm-9">
+											<input type="password" th:field="*{usuario.passwordConfirmForm}" class="col-xs-10 col-sm-5" th:value="*{usuario.passwordConfirmForm}" placeholder="Digite novamente a senha"/>
+											<label class="error" th:if="${#fields.hasErrors('usuario.passwordConfirmForm')}" th:errors="*{usuario.passwordConfirmForm}">Name error</label>
+										</div>
+									</div>
+<!-- 								</div> -->
+								<h3 class="header smaller lighter blue">Status</h3>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="control-group">
+											<label class="control-label bolder blue">Habilitado</label>
+												<div class="radio">
+													<label>
+														<input th:field="*{usuario.status}" th:name="*{usuario.status}" value="true" class="ace" type="radio"/>
+														<span class="lbl"> Sim</span>
+													</label>
+													<label>
+														<input th:field="*{usuario.status}" th:name="*{usuario.status}" value="false" class="ace" type="radio"/>
+														<span class="lbl"> Não</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<label class="error" th:if="${#fields.hasErrors('usuario.status')}" th:errors="*{usuario.status}">Password error</label>
+									</div>
+								<h3 class="header smaller lighter blue">Avatar</h3>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6">
+											<div class="control-group">
+											<label class="control-label bolder blue"></label>
+												<div class="radio">
+														<img class="nav-user-photo" th:src="@{/images/avatars/user.jpg}" alt="User Photo" />
+													<label>
+														<input th:field="*{usuario.avatarPhoto}" class="ace" type="radio" value="user.jpg"/>
+														<span class="lbl"></span>
+													</label>
+												</div>
+												<div class="radio">
+		
+													<img class="nav-user-photo" th:src="@{/images/avatars/avatar1.png}" alt="User Photo" />
+													<label>
+														<input th:field="*{usuario.avatarPhoto}" value="avatar1.png" class="ace" type="radio"/>
+														<span class="lbl"></span>
+													</label>
+												</div>
+												<div class="radio">
+													<img class="nav-user-photo" th:src="@{/images/avatars/avatar3.png}" alt="User Photo" />
+													<label>
+														<input th:field="*{usuario.avatarPhoto}" value="avatar3.png" class="ace" type="radio"/>
+														<span class="lbl"></span>
+													</label>
+												</div>
+												<div class="radio">
+													<img class="nav-user-photo" th:src="@{/images/avatars/avatar4.png}" alt="User Photo" />
+													<label>
+														<input th:field="*{usuario.avatarPhoto}" value="avatar4.png" class="ace" type="radio"/>
+														<span class="lbl"></span>
+													</label>
+												</div>
+												<div class="radio">
+													<img class="nav-user-photo" th:src="@{/images/avatars/avatar5.png}" alt="User Photo" />
+													<label>
+														<input th:field="*{usuario.avatarPhoto}" value="avatar5.png" class="ace" type="radio"/>
+														<span class="lbl"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<label class="error" th:if="${#fields.hasErrors('usuario.avatarPhoto')}" th:errors="*{usuario.avatarPhoto}">Password error</label>
+									</div>
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info" type="submit">
+											<i class="ace-icon fa fa-check bigger-110"></i>
+											Cadastrar
+										</button>
+	
+										&nbsp; &nbsp; &nbsp;
+										<button class="btn" type="reset">
+											<i class="ace-icon fa fa-undo bigger-110"></i>
+											Resetar
+										</button>
+									</div>
+								</div>
+							</form>
+							<!-- 										AQUI TERMINA O FORM -->
+
+							</div><!--/.col!-->
+						</div><!--/.row!-->
+					</div><!-- .page-content!-->
+				</div>
+			</div><!-- /.main-content!-->
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Future</span>
+							System &copy; 2017
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!--/.main-container!-->
+
+		<!-- basic scripts -->
+	<script th:inline="javascript">
+	$(document).ready(function(){
+		$('#telefone').mask('(00) 00000-0000');
+		
+		$('#passwordForm').focusout(function(){
+			$('#password').val($('#passwordForm').val());
+			
+		});
+		$('#passwordConfirmForm').focusout(function(){
+			$('#password').val($('#passwordForm').val());
+			
+		});
+
+	});
+	
+	</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body>
+		<div th:fragment="bodyAdministrador">
+			<div class="page-header">
+				<h2>Olá Professor, <span th:text ="${#authentication.getPrincipal().getName()}"></span></h2>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row">
+						
+							<p align="left">Bem vindo ao sistema Controle de Escolares. Com esse sistema os pais poderão saber
+								quando seus filhos se ausentarem de alguma aula sendo notificados por email.</p>
+													
+													
+							<p align="left">Caro Professor, apos realizar seu login, vá ao menu <strong>Faltas:</strong></p><blockquote>  <strong>Inserir falta para aluno</strong>(para apontar uma falta) ou na op&ccedil;&atilde;o
+							 <strong>Listar Faltas</strong> para verificar os alunos faltantes.</blockquote> 
+								
+							<p align="left">Todos os alunos cadastrados atualmente no sistema e seus respectivos pais estão com as notificações ativadas em todas  suas matérias 
+							automaticamente. Portanto, assim que a falta é<br/> inserida no sistema, um &#9993;(email) é enviado para o contato do responsável cadastrado no sistema.
+							</p>
+							
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

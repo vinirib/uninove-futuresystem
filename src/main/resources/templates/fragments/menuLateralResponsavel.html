@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	<body th:fragment="menuLateral" class="no-skin">
+		<div id="menuLateral">
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="/">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Dashboard</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-table"></i>
+							<span class="menu-text">
+								Listar
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/alunos/listarPorResponsavel}">
+									<i class="fa fa-users"></i>
+									Filhos matriculados
+								</a>
+
+							</li>
+							<li class="">
+								<a th:href="@{/professores/listar}">
+									<i class="fa fa-book"></i>
+									Professores e matérias
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-calendar"></i>
+							<span class="menu-text"> Agenda </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/agendas/agendaDosFilhos}">
+									<i class="fa fa-user-plus"></i>
+									Visualizar agendas dos filhos
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/agendas/agendaDosProfessores}">
+									<i class="fa fa-user-plus"></i>
+									Visualizar de todos professores
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-envelope-o"></i>
+							<span class="menu-text"> Notificações </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/notificacoes/nova}">
+									<i class="fa fa-envelope"></i>
+									Nova notificação
+								</a>
+							</li>
+							<li class="">
+								<a th:href="@{/notificacoes/listar}">
+									<i class="fa fa-envelope-o"></i>
+									Visualizar notificações de faltas
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-eye"></i>
+							<span class="menu-text"> Faltas </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a th:href="@{/faltas/faltasDosFilhos}">
+									<i class="fa fa-table"></i>
+									Listar faltas dos filhos
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul><!--/.nav-list!-->
+			</div><!-- /.main-content -->
+	</body>
+</html>

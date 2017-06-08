@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<style type="text/css">
+			.loadersmall {
+					    -moz-border-bottom-colors: none;
+					    -moz-border-left-colors: none;
+					    -moz-border-right-colors: none;
+					    -moz-border-top-colors: none;
+					    animation: 1s linear 0s normal none infinite running spin;
+					    border-color: #555 #f3f3f3 #f3f3f3;
+					    border-image: none;
+					    border-radius: 50%;
+					    border-style: solid;
+					    border-width: 5px;
+					    height: 50px;
+					    width: 50px;
+					}
+					@keyframes spin {
+						0% {
+						    transform: rotate(0deg);
+						}
+						100% {
+						    transform: rotate(360deg);
+						}
+					}
+					@keyframes spin {
+						0% {
+						    transform: rotate(0deg);
+						}
+						100% {
+						    transform: rotate(360deg);
+						}
+					}
+		
+		</style>
+	</head>
+	<body>
+		<div th:fragment="bodyAdministrador">
+			<div class="page-header">
+				<h2>Olá Administrador</h2>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-sm-6">
+							<p>		Bem vindo ao sistema Controle de Escolares. Com esse sistema os pais poderão saber
+								quando seus filhos se ausentarem de alguma aula sendo notificados por email.</p>
+								<br/>
+							<p>		Navegue pelos menus a esquerda para obter informações da escola, como alunos, professores
+							turmas e salas cadastradas. O Administrador também pode cadastrar novas turmas, salas, professores e etc</p>
+								<br/>
+							<p>		Cada login terá seu menu personalizado com suas devidas funcionalidades. Possuímos três hierarquias de usuário:
+							</p>
+							<ul>
+								<li> Administrador</li>
+								<li> Professor</li>
+								<li> Responsável</li>
+							</ul>
+						</div>
+						<div class="col-sm-6">
+							<p>		Para realizar o teste de notificação de email corretamente, por favor, edite um responsável e edite seu email de contato
+							insira seu email e salve.</p>
+								<br/>
+							<p>		Realize login como um professor (visualize todos os usuários cadastrados em listar/usuarios (todos possuem a senha 123)),
+							e vá no menu inserir falta para aluno. </p>
+								<br/>
+							<p>		Todos os alunos cadastrados atualmente no sistema e seus respectivos pais estão com todas notificações ativadas em todas  suas matérias 
+							automaticamente. Portanto, assim que a falta é inserida no sistema, um email é disparado para o contato do responsável cadastrado no sistema.
+							</p>
+							<p>		O sistema já possui uma massa de dados criada assim que ele inicia, mas se desejado, podem ser criados novos alunos, responsáveis, professores e etc.</p>
+
+							<div class="center">
+							<br/>
+							<h4>Testar envio de email de falta</h4>
+								<br/>
+								<input type="text" name="email" id="email" style="float:left" placeholder="Digite um email válido"/>
+								<br/>
+								<br/>
+								<button class="btn btn-info" type="submit" style="float:left" id="emailTeste">Enviar email de teste</button>
+							</div>
+								<div class="loadersmall"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script th:inline="javascript">
+		$(document).ready(function(){
+			$('#emailTeste').click(function(){
+				var email  = $('#email').val();
+				var haveEmail = $.trim($('#email').val()).length > 0;
+				if(haveEmail){
+					if(!validateEmail(email)){
+						alert("Digite um email valido!");
+						$('#email').val('');
+					} else {
+						emailDeTeste(email);
+					}
+				} else {
+					alert("Digite um email.")
+				}
+				
+			})
+		});
+		
+		 function validateEmail($email) {
+			  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			  return emailReg.test( $email );
+		}
+		function emailDeTeste(email) {
+		    $.ajax({
+		        method: "GET",
+		        url: "/faltas/emailTest?email="+email,
+		        cache: false,
+		        timeout: 600000,
+		        success: function (data) {
+					alert(data);
+		        },
+		        error: function (e) {
+		        	alert(e);
+		        }
+		    });
+	
+		}	
+	
+	</script>
+</html>
