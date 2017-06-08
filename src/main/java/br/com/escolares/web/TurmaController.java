@@ -45,7 +45,7 @@ public class TurmaController {
 	public String listar(Model model){
 		List<Turma> turmas = turmaRepository.findAll();
 		model.addAttribute("turmas", turmas);
-		return "/turmas/listar";
+		return "turmas/listar";
 		
 	}
 	

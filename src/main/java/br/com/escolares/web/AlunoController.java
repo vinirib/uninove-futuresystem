@@ -72,7 +72,7 @@ public class AlunoController {
 		// lista ordenada por nome do aluno
 		List<Aluno> alunos = alunoRepository.findAll(new Sort("nome"));
 		model.addAttribute("alunos", alunos);
-		return "/alunos/listar";
+		return "alunos/listar";
 	}
 
 	@RequestMapping("listarPorResponsavel")
@@ -81,7 +81,7 @@ public class AlunoController {
 		Responsavel responsavel  = responsavelRepository.findByUsuario(loggedUser.getId());
 		List<Aluno> alunos = alunoRepository.findByResponsavel(responsavel.getId());
 		model.addAttribute("alunos", alunos);
-		return "/alunos/listar";
+		return "alunos/listar";
 	}
 
 	@GetMapping("cadastrar")

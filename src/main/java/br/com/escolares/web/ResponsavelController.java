@@ -50,7 +50,7 @@ public class ResponsavelController {
 	public String listar(Model model){
 		List<Responsavel> responsaveis = responsavelRepository.findAll(new Sort("nome"));
 		model.addAttribute("responsaveis", responsaveis);
-		return "/responsaveis/listar";
+		return "responsaveis/listar";
 	}
 	
 	@GetMapping("cadastrar")

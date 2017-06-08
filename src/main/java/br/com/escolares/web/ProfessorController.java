@@ -55,7 +55,7 @@ public class ProfessorController {
 	public String listar(Model model) {
 		List<Professor> professores = professorRepository.findAll(new Sort("nome"));
 		model.addAttribute("professores", professores);
-		return "/professores/listar";
+		return "professores/listar";
 	}
 
 	@GetMapping("cadastrar")
