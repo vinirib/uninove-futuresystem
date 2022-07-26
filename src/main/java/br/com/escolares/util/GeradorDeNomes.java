@@ -59,7 +59,7 @@ public class GeradorDeNomes {
 		for (int i = 0; i < quantidade; i++) {
 			nomesComSobrenomes.add(getNomeComSobrenomeAleatorio());
 		}
-		return new ArrayList<String>(nomesComSobrenomes);
+		return new ArrayList<>(nomesComSobrenomes);
 	}
 	
 	public static String geraNomeComGrauDeParentesco(String sobrenome){
