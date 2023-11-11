@@ -1,9 +1,27 @@
 version: '3.8'
 
 services:
+  uninove-future-system:
+    container_name: uninove-future-system
+    build:
+      dockerfile: Dockerfile
+    working_dir: /uninove-future-system
+    volumes:
+      - ./:/uninove-future-system
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
+      - "SPRING_DATASOURCE_URL=jdbc:postgresql://postgres_container_uninove_system:5432/escolares"
+      - "SPRING_DATASOURCE_USERNAME=postgres"
+      - "SPRING_DATASOURCE_PASSWORD=changeme"
+    command: mvn clean install spring-boot:run
+
   postgres:
-    container_name: postgres_container
-    image: postgres:9
+    container_name: postgres_container_uninove_system
+    image: postgres:15.1
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}

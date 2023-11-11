@@ -276,7 +276,11 @@ public class ConstroiDadosDoSistema {
 			aluno.setEndereco(constroiEndereco());
 			Turma turma = turmas.get(0);
 			aluno.setTurma(turma);
-			aluno.setDataNascimento(GeradorDeDataDeNascimento.geraDataEntre(LocalDate.of(2000, 3, 1), LocalDate.of(2010, 3, 1)));
+			aluno.setDataNascimento(GeradorDeDataDeNascimento
+					.geraDataEntre(LocalDate.now()
+								.minusYears(15),
+							LocalDate.now()
+								.minusYears(10)));
 			filhos.add(aluno);
 			alunoRepository.save(aluno);
 			turma.getAlunos().add(aluno);
