@@ -21,10 +21,10 @@ Aplicação construída para entrega do TCC na Faculdade Universidade Nove de Ju
 
 ## Utilização
 
-Aplicação publicada na plataforma [Heroku](https://heroku.com/). 
+Aplicação publicada na plataforma [Fly.io](https://heroku.com/). 
 Para utilizar acesse o endereço abaixo:
 
-https://goo.gl/dcEaXh
+https://uninove-future-system.fly.dev/
 
 <b>Credenciais</b>:<br/>
 User: admin@futuresystem.com.br <br/>
