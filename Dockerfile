@@ -12,7 +12,7 @@ COPY . /app
 RUN mvn clean package
 
 # Use the adoptopenjdk image as the base image
-FROM amazoncorretto:8-alpine-jdk AS production
+FROM amazoncorretto:21-alpine-jdk AS production
 
 # Set the working directory inside the container
 WORKDIR /app
