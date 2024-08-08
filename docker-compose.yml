@@ -21,7 +21,7 @@ services:
 
   postgres:
     container_name: postgres_container_uninove_system
-    image: postgres:16.2
+    image: postgres:16.4
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
