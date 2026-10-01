@@ -1,6 +1,6 @@
-FROM maven:3.9-amazoncorretto-8
+FROM maven:3.10-amazoncorretto-8
 # Use the maven image to build the application
-FROM maven:3.9-amazoncorretto-8 AS build
+FROM maven:3.10-amazoncorretto-8 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
