@@ -1,6 +1,6 @@
-FROM maven:3.9-amazoncorretto-8
+FROM maven:3.10-amazoncorretto-11
 # Use the maven image to build the application
-FROM maven:3.9-amazoncorretto-8 AS build
+FROM maven:3.10-amazoncorretto-11 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -12,7 +12,7 @@ COPY . /app
 RUN mvn clean package
 
 # Use the adoptopenjdk image as the base image
-FROM amazoncorretto:8-alpine-jdk AS production
+FROM amazoncorretto:11-alpine-jdk AS production
 
 # Set the working directory inside the container
 WORKDIR /app

@@ -7,7 +7,7 @@ Aplicação construída para entrega do TCC na Faculdade Universidade Nove de Ju
 
 ### Tecnologias utilizadas
 
-- Java 8
+- Java 11
 - Spring Boot
 - Spring Security
 - Spring Cache
@@ -37,7 +37,7 @@ irá inicializar o servidor gerando maior tempo de resposta, aguarde 1 minuto e 
 
 Para rodar localmente você deverá utilizar:
 
-- Java 8
+- Java 11
 - Docker
 - Docker Compose
 
